@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-schedule",
+  "version": "1.0.0",
+  "description": "A playful Tic-Tac-Toe style planner designed to assist seniors with their daily routines.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [],
+  "author": "new",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "@eslint/js": "^10.0.1",
+    "babel-jest": "^30.3.0",
+    "eslint": "^10.2.0",
+    "globals": "^17.5.0",
+    "jest": "^30.3.0"
+  }
+}

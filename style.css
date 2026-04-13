@@ -1,0 +1,207 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --cell-size: 110px;
+  --gap: 15px;
+  --bg-color: #f0f4f8;
+  --card-bg: #ffffff;
+  --primary-color: #2c3e50;
+  --accent-color: #e67e22; /* Orange highlight */
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-container {
+  text-align: center;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+}
+
+.grid-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, var(--cell-size));
+  grid-template-rows: repeat(3, var(--cell-size));
+  gap: var(--gap);
+  padding: var(--gap);
+  background: #ecf0f1;
+  border-radius: 12px;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.cell {
+  position: relative;
+  background: white;
+  border: 2px solid #dcdde1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.cell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.activity-name {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.symbol {
+  font-size: 2.5rem;
+  font-weight: bold;
+  height: 45px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.time {
+  font-size: 0.7rem;
+  color: #95a5a6;
+}
+
+.cell[data-status="complete"] {
+  border-color: var(--success-color);
+  background-color: #fafffb;
+  color: var(--success-color);
+}
+
+.cell[data-status="incomplete"] {
+  color: var(--danger-color);
+}
+
+.victory-line {
+  position: absolute;
+  background-color: var(--accent-color);
+  opacity: 0.8;
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.victory-line.row {
+  width: 94%;
+  height: 8px;
+  left: 3%;
+  top: calc(var(--gap) + (var(--cell-size) / 2) + ((var(--cell-size) + var(--gap)) * var(--offset)) - 4px);
+}
+
+.victory-line.column {
+  width: 8px;
+  height: 94%;
+  top: 3%;
+  left: calc(var(--gap) + (var(--cell-size) / 2) + ((var(--cell-size) + var(--gap)) * var(--offset)) - 4px);
+}
+
+.victory-line.diagonal.main {
+  width: 130%;
+  height: 8px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+  left: 50%;
+}
+
+.victory-line.diagonal.secondary {
+  width: 130%;
+  height: 8px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  top: 50%;
+  left: 50%;
+}
+
+.game-wrapper {
+  position: relative;
+  padding-top: 5rem;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.message-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.message-banner.active {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(230, 126, 34, 0.2);
+  opacity: 1;
+}
+
+.message-banner.success-theme {
+  color: var(--success-color);
+}
+
+.controls {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.primary-button {
+  background: var(--primary-color);
+  color: white;
+}
+
+.secondary-button {
+  background: #bdc3c7;
+  color: #2c3e50;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
