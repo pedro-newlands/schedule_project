@@ -71,12 +71,12 @@ Devido ao uso de Módulos JavaScript (ES6), a aplicação requer um ambiente de 
 
 ## Qualidade e Testes
 
-1. ### Testes Automatizados (Jest)
+1. ## Testes Automatizados (Jest)
    Para garantir que as regras de negócio (vitórias, diagonais e mensagens) funcionem corretamente:
    ```bash
    npm test
 
-2. ### Linting (Análise Estática com ESLint)
+2. ## Linting (Análise Estática com ESLint)
    Para verificar a padronização e qualidade do código: 
    ```bash
    npm run lint
@@ -85,5 +85,5 @@ Devido ao uso de Módulos JavaScript (ES6), a aplicação requer um ambiente de 
 Este projeto utiliza o padrão **MAJOR.MINOR.PATCH:**
 * **Versão Atual:** 1.0.0
 
-**Autor
+**Autor**
 * **Pedro Silveira Newlands Machado**
