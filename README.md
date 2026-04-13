@@ -3,7 +3,7 @@
 [![TicTacSchedule CI](https://github.com/pedro-newlands/schedule_project/actions/workflows/ci.yml/badge.svg)](https://github.com/pedro-newlands/schedule_project/actions)
 
 ## Sobre o Projeto
-O **TicTacSchedule** é o mvp de um organizador de rotina gamificado, desenvolvido para transformar a gestão de tarefas diárias em uma experiência intuitiva, familiar e prazerosa. Utilizando a mecânica universal do **Jogo da Velha (Tic-Tac-Toe)**, a aplicação foca no equilíbrio essencial entre Saúde, Lazer e Trabalho.
+O **TicTacSchedule** é o mvp de um organizador de rotina gamificado, desenvolvido para transformar a gestão de tarefas diárias em uma experiência intuitiva, familiar e prazerosa. Utilizando a mecânica universal do **Jogo da Velha (Tic-Tac-Toe)**, a aplicação foca no equilíbrio essencial entre categorias pré-definidas.
 
 ### O Problema: Barreiras Digitais na Terceira Idade
 Muitos aplicativos de produtividade atuais falham com o público idoso devido a:
@@ -14,7 +14,7 @@ Muitos aplicativos de produtividade atuais falham com o público idoso devido a:
 ### A Solução: Familiaridade e Lúdico
 O TicTacSchedule resolve essa "dor" ao adotar um cenário que é parte da memória afetiva e cultural de quase todos os idosos: o **Jogo da Velha**.
 * **Interface Afetiva:** Ao marcar uma tarefa, o usuário não apenas "conclui um item", ele "faz uma jogada".
-* **Equilíbrio Visual:** As categorias estabelecidas e períodos (Manhã, Tarde, Noite) são organizados organicamente no grid 3x3.
+* **Equilíbrio Visual:** As categorias estabelecidas(linhas) e períodos (colunas) são organizados organicamente no grid 3x3.
 * **Feedback Positivo:** Completar uma linha ou coluna gera celebrações visuais imediatas, incentivando o usuário a buscar a "Harmonia Absoluta" (completar todo o tabuleiro).
 
 ---
@@ -72,12 +72,12 @@ Devido ao uso de Módulos JavaScript (ES6), a aplicação requer um ambiente de 
 ## Qualidade e Testes
 
 ### Testes Automatizados (Jest)
-Para garantir que as regras de negócio (vitórias, diagonais e mensagens) funcionem corretamente:
+1. Para garantir que as regras de negócio (vitórias, diagonais e mensagens) funcionem corretamente:
    ```bash
    npm test
 
 ### Linting (Análise Estática com ESLint)
-Para verificar a padronização e qualidade do código: 
+2. Para verificar a padronização e qualidade do código: 
    ```bash
    npm run lint
 
