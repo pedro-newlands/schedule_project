@@ -52,7 +52,7 @@ O TicTacSchedule resolve essa "dor" ao adotar um cenário que é parte da memór
 ### Instalação
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/pedro-newlands/TicTacSchedule.git](https://github.com/SEU_USUARIO/TicTacSchedule.git)
+   git clone https://github.com/pedro-newlands/schedule_project.git
 
 2. Acesse a pasta do projeto: 
    ```bash
