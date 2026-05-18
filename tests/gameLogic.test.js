@@ -1,4 +1,4 @@
-import TicTacToeLogic from '../src/logic.js';
+import TicTacToeLogic from '../src/gameLogic.js';
 import Activity from '../src/models/activity.js';
 
 const createMockBoard = () => {
