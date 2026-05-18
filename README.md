@@ -30,13 +30,14 @@ O TicTacSchedule resolve essa "dor" ao adotar um cenário que é parte da memór
 * **Grid Gamificado:** Marcação de tarefas intuitiva com detecção automática de sequências.
 * **Mensagens Dinâmicas:** Incentivos personalizados que variam conforme o progresso do usuário no dia.
 * **Arquitetura Profissional:** Código modular, testado e preparado para futuras expansões.
+* **Integração Externa** Consumo da API OpenWeather para acrescentar contextos climáticos à agenda gamificada.
 
 ---
 
 ## Tecnologias Utilizadas
 * **Linguagem:** JavaScript (ES6+ Modules)
 * **Estilização:** CSS3 (Grid Layout & Flexbox)
-* **Testes Automatizados:** Jest
+* **Testes Automatizados:** Jest e ambiente jsdom
 * **Qualidade de Código:** ESLint (Análise Estática)
 * **Integração Contínua:** GitHub Actions (CI)
 * **Tooling:** Babel (Transpilação para ambiente de testes)
@@ -72,7 +73,7 @@ Devido ao uso de Módulos JavaScript (ES6), a aplicação requer um ambiente de 
 ## Qualidade e Testes
 
 1. ### Testes Automatizados (Jest)
-   Para garantir que as regras de negócio (vitórias, diagonais e mensagens) funcionem corretamente:
+   Para garantir que as regras de negócio (vitórias, diagonais e mensagens) e os testes de integração com a API externa funcionem corretamente:
    ```bash
    npm test
 

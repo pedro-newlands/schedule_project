@@ -68,13 +68,13 @@ async function init(forcedDate = null) {
   
   if (!mySchedule) {
     const activities = [
-      new Activity('Stretch', '07:00', 'Health', true),
+      new Activity('Stretch', '07:00', 'Health'),
       new Activity('Gym', '14:30', 'Health', true),
-      new Activity('Diet', '23:00', 'Health', true),
-      new Activity('React', '9:59', 'Study', true),
-      new Activity('Pokepy', '17:00', 'Study', true),
-      new Activity('Piano', '20:00', 'Study', true),
-      new Activity('Interfaces Dev study', '19:00', 'Specific', true),
+      new Activity('Diet', '23:00', 'Health'),
+      new Activity('React', '9:59', 'Study'),
+      new Activity('C#', '17:00', 'Study'),
+      new Activity('Piano', '20:00', 'Study'),
+      new Activity('Interfaces Dev study', '19:00', 'Specific'),
       new Activity('Dermatologist', '13:00', 'Specific', true),
       new Activity('Oftalmologist', '7:00', 'Specific', true)
     ];
