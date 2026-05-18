@@ -1,11 +1,12 @@
 export default class Schedule {
   static shifts = [
-    { shift: 'morning', between: ['02:00', '09:59'] },
-    { shift: 'afternoon', between: ['10:00', '17:59'] },
-    { shift: 'evening', between: ['18:00', '01:59'] }
+    { shift: 'morning', between: ['3:00', '10:59'] },
+    { shift: 'afternoon', between: ['11:00', '18:59'] },
+    { shift: 'evening', between: ['19:00', '2:59'] }
   ];
 
-  constructor(categories, activities) {
+  constructor(categories, activities, date) {
+    this.date = date;
     this.categories = categories.slice(0, 3);
 
     this.activities = activities.filter(activity => 
@@ -39,11 +40,25 @@ export default class Schedule {
     }
   }
 
-  #compareHourToShift(hour, start, end) {
-    if (start > end) {
-      return hour >= start || hour <= end;
-    }
-    return hour >= start && hour <= end;
+  #convertToMinutes(timeStr) {
+    const [hours, minutes] = timeStr.split(':').map(Number);
+    return (hours * 60) + minutes;
   }
-}
 
+  #compareHourToShift(hour, start, end) {
+    const currentMin = this.#convertToMinutes(hour);
+    const startMin = this.#convertToMinutes(start);
+    const endMin = this.#convertToMinutes(end);
+
+    // Caso o turno vire a noite (ex: 19:00 até 2:59)
+    if (startMin > endMin) {
+      return currentMin >= startMin || currentMin <= endMin;
+    }
+    
+    return currentMin >= startMin && currentMin <= endMin;
+  }
+
+  getBoard() { return this.board; };
+  
+  getDate() { return this.date};
+}

@@ -1,13 +1,12 @@
 export default class Activity {
-  static statusOptions = ['incomplete', 'complete'];
   static symbolsOptions = ['X', 'O'];
 
-  constructor(name, hour, category) {
+  constructor(name, hour, category, bool) {
     this.name = name;
     this.hour = hour;
     this.category = category;
-    this.status = Activity.statusOptions[0];
-    this.symbol = '';
+    this.status = 'pending';
+    this.isRelativeToWeatherConditions = bool;
   }
 
   getName() { return this.name }
@@ -15,15 +14,19 @@ export default class Activity {
   getCategory() { return this.category }
   getStatus() { return this.status }
   getSymbol() { return this.symbol }
+  getBool() { return this.isRelativeToWeatherConditions }
 
   setName(name) { this.name = name }
   setHour(hour) { this.hour = hour }
   setCategory(category) { this.category = category }
 
   setStatus(index) {
-    const i = (index === 1 || index === 'complete') ? 1 : 0;
+    if (index === 'complete') {
+      this.symbol = Activity.symbolsOptions[1];
+    } else if (index === 'incomplete') {
+      this.symbol = Activity.symbolsOptions[0];
+    }
 
-    this.status = Activity.statusOptions[i];
-    this.symbol = Activity.symbolsOptions[i];
+    this.status = index;
   }
 }

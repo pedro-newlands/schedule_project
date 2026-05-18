@@ -2,7 +2,7 @@
   "name": "tic-tac-schedule",
   "version": "1.0.0",
   "description": "A playful Tic-Tac-Toe style planner designed to assist seniors with their daily routines.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint src/**/*.js"
