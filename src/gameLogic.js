@@ -8,10 +8,10 @@ export default class TicTacToeLogic {
     const previousVictories = this.checkGameState(board);
 
     if (targetActivity.getStatus() === 'complete') {
-      targetActivity.setStatus(0);
+      targetActivity.setStatus('incomplete');
       TicTacToeLogic.count--;
     } else {
-      targetActivity.setStatus(1);
+      targetActivity.setStatus('complete');
       TicTacToeLogic.count++;
     }
 
@@ -81,6 +81,14 @@ export default class TicTacToeLogic {
   }
 
   getFinalResult(board) {
+    board.forEach(row => {
+      row.arr.forEach(slot => {
+        if (slot.activity && slot.activity.getStatus() === 'pending') {
+          slot.activity.setStatus('incomplete');
+        }
+      });
+    });
+
     const victories = this.checkGameState(board);
 
     if (victories.length === 8) {

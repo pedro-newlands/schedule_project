@@ -57,15 +57,15 @@ p {
 .cell {
   position: relative;
   background: white;
+  opacity: .8;
   border: 2px solid #dcdde1;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 8px;
+  align-items: center;
+  padding: .25rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  overflow: hidden;
 }
 
 .cell:hover {
@@ -77,21 +77,35 @@ p {
   font-size: 0.85rem;
   font-weight: bold;
   color: var(--primary-color);
+  min-height: 40px;
 }
 
 .symbol {
-  font-size: 2.5rem;
+  font-size: 3.5ex;
   font-weight: bold;
-  height: 45px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  flex-grow: 1;
+  justify-self: center;
+  transform: translateY(-10px);
 }
 
 .time {
-  font-size: 0.7rem;
+  font-size: .95rem;
   color: #95a5a6;
+}
+
+.weather-icon{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.weather-icon img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%) contrast(80%);
 }
 
 .cell[data-status="complete"] {
@@ -101,6 +115,7 @@ p {
 }
 
 .cell[data-status="incomplete"] {
+  border-color: var(--danger-color);
   color: var(--danger-color);
 }
 
